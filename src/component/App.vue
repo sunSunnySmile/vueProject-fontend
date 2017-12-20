@@ -1,6 +1,7 @@
 <template>
     <div>
         <app-Header></app-Header>
+        <app-Home></app-Home>
         <app-Footer></app-Footer>
     </div>
 </template>
@@ -11,10 +12,13 @@
     import FooterComponent from './frame/Footer.vue';
     import $ from 'jquery';
 
+    import HomeComponent from './goods/GoodsHome.vue';
+
     export default {
         components:{
             appHeader:HeaderComponent,
             appFooter:FooterComponent,
+            appHome:HomeComponent
         },
         // 模版挂载到视图后执行, 这时候可以操作页面上的DOM了        
          mounted(){       

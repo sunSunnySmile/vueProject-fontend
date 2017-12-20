@@ -1,0 +1,22 @@
+<template>
+    <div>
+        <div class="section">
+            <div class="location">
+                <span>当前位置：</span>
+                <a href="/index.html">首页</a>
+                <a href="/goods.html">购物商城</a>
+            </div>
+        </div>
+
+    </div>
+</template>
+
+<script>
+    export default {
+        
+    }
+</script>
+
+<style scoped>
+
+</style>
