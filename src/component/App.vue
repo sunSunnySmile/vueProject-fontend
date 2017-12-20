@@ -1,17 +1,20 @@
 <template>
     <div>
         <app-Header></app-Header>
+        <app-Footer></app-Footer>
     </div>
 </template>
 
 <script>
 // 导入头部与底部组件
     import HeaderComponent from './frame/Header.vue';
+    import FooterComponent from './frame/Footer.vue';
     import $ from 'jquery';
 
     export default {
         components:{
             appHeader:HeaderComponent,
+            appFooter:FooterComponent,
         },
         // 模版挂载到视图后执行, 这时候可以操作页面上的DOM了        
          mounted(){       
