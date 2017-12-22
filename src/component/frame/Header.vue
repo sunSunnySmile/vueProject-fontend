@@ -50,9 +50,10 @@
                             </a>
                         </li>
                         <li>
-                            <a target="_blank" href="/admin/index.aspx">
-                                问题提交
-                            </a>
+                            <router-link to="/goods">
+                                购物商城
+                            </router-link>
+                           
                         </li>
                     </ul>
                 </div>

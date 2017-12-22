@@ -101,12 +101,12 @@
                     </div>
                     <!--/类别菜单-->
 
-                    <!--幻灯片-->
+                    <!--幻灯片:替换轮播图中的数据，记得导入element-ui的样式-->
                     <div class="left-705">
                         <div class="banner-img">
                             <el-carousel :interval="5000" arrow="always">
-                                <el-carousel-item v-for="item in 4" :key="item">
-                                    <h3>{{ item }}</h3>
+                                <el-carousel-item v-for="item in Topdata.sliderlist" :key="item.id">
+                                    <img :src="item.img_url">
                                 </el-carousel-item>
                             </el-carousel>
 
@@ -172,7 +172,34 @@
 </template>
 
 <script>
-export default {};
+    export default {        
+        data(){
+            return {
+                    Topdata:{
+                        catelist:[],
+                        sliderlist:[],
+                        toplist:[]
+                    }                    
+                
+            }
+        },
+        methods:{
+            getTopdata(){                
+                this.$http.get(this.$api.goodsTop)
+                .then(rsp=>{
+                    // console.log(rsp.data.message);
+                    this.Topdata=rsp.data.message
+                    console.log(this.Topdata.catelist);
+                    
+                })
+            },                    
+        },
+       created(){
+            this.getTopdata();
+            }
+
+        
+    };
 </script>
 
 <style scoped lang="less">

@@ -5,9 +5,28 @@ import Vue from 'vue';
 import './css/style.css';
 // 导入路由模块
 import VueRouter from 'vue-router';
+// 导入elementUi的样式
+import elementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+
+
+
+
+// 1-1将api_config和axios写入到Vue的原型上
+import axios from './js/axios_config.js';
+import api from './js/api_config.js';
+
+// 1-2写入到Vue的原型上
+Vue.prototype.$http = axios;
+Vue.prototype.$api = api;
+
+
+
 
 // 1.2 启用vue插件
 Vue.use(VueRouter);
+Vue.use(elementUI);
+
 
 
 // 导入路由实例
