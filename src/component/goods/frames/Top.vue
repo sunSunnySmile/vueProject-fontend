@@ -27,12 +27,15 @@
                                                     {{item.title}}
                                                 </router-link>
                                             </dt>
-                                            <dd>
+                                            <!-- <dd>  
+                                                1.用v-for一层一层遍历的做法
                                                <router-link :to="{name:'gd',params:{id:item.id}}"  v-for="subitem in item.subcates" :key="subitem.id">
                                                      {{subitem.title}}
                                                 </router-link>
 
-                                            </dd>
+                                            </dd> -->
+                                            <!-- 2.用递归的方法 -->
+                                            <app-menu :menu="item.subcates"></app-menu>
                                         </dl>
                                     </div>
                                 </li>                             
@@ -78,7 +81,8 @@
 </template>
 
 <script>
-    export default {        
+    import MenuComponent from './menu.vue';
+    export default { 
         data(){
             return {
                     Topdata:{
@@ -97,6 +101,9 @@
                     this.Topdata=rsp.data.message
                 })
             },                    
+        },
+        components:{
+            appMenu:MenuComponent
         },
        created(){
             this.getTopdata();
