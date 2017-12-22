@@ -9,93 +9,33 @@
                             <ul>
                                 <!--此处声明下面可重复循环-->
 
-                                <li>
+                                <li v-for="item in Topdata.catelist" :key="item.id">
                                     <h3>
                                         <i class="iconfont icon-arrow-right"></i>
-                                        <span>手机数码</span>
-                                        <p>
-
-                                            手机通讯 摄影摄像 存储设备
-
-                                        </p>
-                                    </h3>
-                                    <div class="item-box">
-                                        <!--如有三级分类，此处可循环-->
+                                        <span>{{item.title}}</span>
+                                       <p>
+                                            <span v-for="subitem in item.subcates" :key="subitem.id">
+                                                {{subitem.title}}
+                                            </span>
+                                       </p>
+                                    </h3>  
+                                  <div class="item-box">
+                                        <!-- 如有三级分类，此处可循环 -->
                                         <dl>
                                             <dt>
-                                                <a href="/goods/40.html">手机数码</a>
+                                                <router-link :to="{name:'gd',params:{id:item.id}}">
+                                                    {{item.title}}
+                                                </router-link>
                                             </dt>
                                             <dd>
-
-                                                <a href="/goods/43.html">手机通讯</a>
-
-                                                <a href="/goods/44.html">摄影摄像</a>
-
-                                                <a href="/goods/45.html">存储设备</a>
+                                               <router-link :to="{name:'gd',params:{id:item.id}}"  v-for="subitem in item.subcates" :key="subitem.id">
+                                                     {{subitem.title}}
+                                                </router-link>
 
                                             </dd>
                                         </dl>
                                     </div>
-                                </li>
-
-                                <li>
-                                    <h3>
-                                        <i class="iconfont icon-arrow-right"></i>
-                                        <span>电脑办公</span>
-                                        <p>
-
-                                            电脑整机 外设产品 办公打印
-
-                                        </p>
-                                    </h3>
-                                    <div class="item-box">
-                                        <!--如有三级分类，此处可循环-->
-                                        <dl>
-                                            <dt>
-                                                <a href="/goods/41.html">电脑办公</a>
-                                            </dt>
-                                            <dd>
-
-                                                <a href="/goods/46.html">电脑整机</a>
-
-                                                <a href="/goods/47.html">外设产品</a>
-
-                                                <a href="/goods/48.html">办公打印</a>
-
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <h3>
-                                        <i class="iconfont icon-arrow-right"></i>
-                                        <span>影音娱乐</span>
-                                        <p>
-
-                                            平板电视 音响DVD 影音配件
-
-                                        </p>
-                                    </h3>
-                                    <div class="item-box">
-                                        <!--如有三级分类，此处可循环-->
-                                        <dl>
-                                            <dt>
-                                                <a href="/goods/42.html">影音娱乐</a>
-                                            </dt>
-                                            <dd>
-
-                                                <a href="/goods/49.html">平板电视</a>
-
-                                                <a href="/goods/50.html">音响DVD</a>
-
-                                                <a href="/goods/51.html">影音配件</a>
-
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                </li>
-
+                                </li>                             
                             </ul>
                         </div>
                     </div>
@@ -187,10 +127,8 @@
             getTopdata(){                
                 this.$http.get(this.$api.goodsTop)
                 .then(rsp=>{
-                    // console.log(rsp.data.message);
+                    console.log(rsp.data.message);
                     this.Topdata=rsp.data.message
-                    console.log(this.Topdata.catelist);
-                    
                 })
             },                    
         },

@@ -15,9 +15,9 @@ const routerConfig = [
     { path: '/', redirect: '/goods' },
 
 
-    { path: '/goods', component: GoodsHomeComponent },
-    { path: '/goods/more', component: GoodsMoreComponent },
-    { path: '/goods/detail/:id', component: GoodsDetailComponent }
+    { name: 'g', path: '/goods', component: GoodsHomeComponent },
+    { name: 'gm', path: '/goods/more', component: GoodsMoreComponent },
+    { name: 'gd', path: '/goods/detail/:id', component: GoodsDetailComponent }
 ];
 export default new VueRouter({
     routes: routerConfig
