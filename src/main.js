@@ -3,6 +3,7 @@
 // 导入第三方包
 import Vue from 'vue';
 import './css/style.css';
+import filters from './filter';
 // 导入路由模块
 import VueRouter from 'vue-router';
 // 导入elementUi的样式
@@ -26,6 +27,7 @@ Vue.prototype.$api = api;
 // 1.2 启用vue插件
 Vue.use(VueRouter);
 Vue.use(elementUI);
+Vue.use(filters);
 
 
 
