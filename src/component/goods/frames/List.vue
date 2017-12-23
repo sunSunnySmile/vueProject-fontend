@@ -57,7 +57,7 @@ export default {
         getDataList(){
             this.$http.get(this.$api.goodsContent)
             .then(rsp=>{
-                // console.log(rsp.data.message);
+              
                 this.dataList=rsp.data.message;                
             });
         }

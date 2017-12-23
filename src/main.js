@@ -13,6 +13,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 
 
 
+
 // 1-1将api_config和axios写入到Vue的原型上
 import axios from './js/axios_config.js';
 import api from './js/api_config.js';

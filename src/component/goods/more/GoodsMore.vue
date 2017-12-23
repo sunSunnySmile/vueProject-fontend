@@ -1,6 +1,6 @@
 <template>
     <div>
-        商品：更多商品详情
+        商品：更多商品
     </div>
 </template>
 
