@@ -12,8 +12,9 @@
                                             </a>
                                         </div>
                                         <div class="txt-box">
-                                            <a href="/goods/show-98.html">{{item.title}}</a>
-                                            <span>{{item.add_time}}</span>
+                                            <!-- <a href="/goods/show-98.html">{{item.title}}</a> -->
+                                            <router-link :to="{name:'gd',params:{id:item.id}}">{{item.title}}</router-link>
+                                            <span>{{item.add_time | date}}</span>
                                         </div>
                                     </li>
 

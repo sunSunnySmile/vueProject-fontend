@@ -1,4 +1,5 @@
 // 导出域名
+// export const domain = 'http://172.16.2.23:9095/'; //局域网接口
 export const domain = 'http://127.0.0.1:8899/';
 
 // 默认导出整个接口配置
